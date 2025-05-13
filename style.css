@@ -294,6 +294,81 @@ section {
     width: 400px;
     margin: auto 0;
 }
+/* Sliding panel from the right */
+.project-panel {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start off-screen on the right */
+    width: 50%;  /* You can adjust the width as needed */
+    height: 100%; /* Full screen height */
+    background-color: white;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: right 0.4s ease-in-out; /* Smooth transition */
+    z-index: 9999; /* Ensure it's in front of other content */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+  }
+  
+  /* When the panel is shown (moved to right: 0) */
+  .project-panel.show {
+    right: 0; /* Slide in from the right */
+  }
+  
+  /* Content inside the sliding window */
+  .project-content {
+    text-align: left;
+  }
+  
+  /* Individual project items */
+  .project-item {
+    margin-bottom: 30px;
+  }
+  
+  .project-title {
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
+  
+  .project-description {
+    font-size: 0.8em;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .project-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Centers the image */
+  }
+  
+  /* Close button in the top-left corner */
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    color: #ff5c5c; /* Optional hover color */
+  }
+  
+  /* Dim the background content when the panel is shown */
+  body.project-panel-open {
+    pointer-events: none; /* Disable interaction with the background */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Dim the background */
+    transition: background-color 0.4s ease-in-out;
+  }
+  
+  body.project-panel-open .project-panel {
+    pointer-events: auto; /* Allow interaction with the sliding panel */
+  }
 /* Experience section */
 #experience {
     position: relative;
@@ -344,7 +419,13 @@ article.icon {
     width: 90%;
     height: 90%;
 }
-
+.pdf-preview {
+    width: 100%;              /* Adjusts width to fill container */
+  height: 300px; 
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 8px;
+  }
 .project-title {
     margin: 1rem;
     color: black;
