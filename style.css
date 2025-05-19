@@ -415,9 +415,13 @@ article.icon {
 }
 
 .project-img {
-    border-radius: 2rem;
-    width: 90%;
-    height: 90%;
+    border-radius: 0;          /* Removes rounded corners */
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    max-width: 300px;
+    margin: auto;
+    display: block;
 }
 .pdf-preview {
     width: 100%;              /* Adjusts width to fill container */
