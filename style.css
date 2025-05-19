@@ -415,10 +415,10 @@ article.icon {
 }
 
 .project-img {
-    border-radius: 0;          /* Removes rounded corners */
+    border-radius: 0;          /* No rounded corners */
     width: 100%;
     aspect-ratio: 1 / 1;
-    object-fit: cover;
+    object-fit: cover;         /* Fill & crop */
     max-width: 500px;
     margin: auto;
     display: block;
